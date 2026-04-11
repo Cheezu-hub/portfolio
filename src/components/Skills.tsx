@@ -20,13 +20,27 @@ const skillCategories = [
   }
 ];
 
+const cardContainerVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { 
+    opacity: 1, 
+    y: 0, 
+    transition: { 
+      duration: 0.5,
+      staggerChildren: 0.1,
+      delayChildren: 0.2
+    }
+  }
+};
+
 function SkillCard({ category, index }: { category: typeof skillCategories[0], index: number }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      viewport={{ once: true }}
+      variants={cardContainerVariants}
+      initial="hidden"
+      whileInView="visible"
+      transition={{ delay: index * 0.1 }}
+      viewport={{ once: true, margin: "-50px" }}
       className="h-full"
     >
       <motion.div
@@ -42,12 +56,14 @@ function SkillCard({ category, index }: { category: typeof skillCategories[0], i
                 <motion.span 
                   key={skillIdx} 
                   variants={{
+                    hidden: { opacity: 0, scale: 0.8 },
+                    visible: { opacity: 1, scale: 1, transition: { duration: 0.4 } },
                     hover: { 
                       backgroundColor: "rgba(255,255,255,0.1)",
                       color: "rgba(255,255,255,1)",
                       borderColor: "rgba(255,255,255,0.5)",
                       boxShadow: "0 0 12px rgba(255,255,255,0.15)",
-                      transition: { delay: skillIdx * 0.05, duration: 0.3 }
+                      transition: { duration: 0.3 }
                     }
                   }}
                   className="px-3 py-1 bg-neutral-800 text-neutral-300 rounded-full text-sm font-medium border border-neutral-700"

@@ -2,6 +2,8 @@ import { useRef } from "react";
 import { motion, useMotionValue, useTransform, useSpring } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { SpotlightHover } from "@/components/ui/spotlight-hover";
+import { ExternalLink } from "lucide-react";
+import { Magnetic } from "@/components/ui/magnetic";
 
 const projects = [
   {
@@ -10,7 +12,10 @@ const projects = [
     problem: "Needed an automated methodology to translate localized browser network activities into reusable and autonomous AI interaction tools.",
     architecture: "Architected an end-to-end automated pipeline that ingests browser network recordings (HAR files) and analyzes API calls using Gemini 2.5 Flash and Claude to generate fully functional Model Context Protocol (MCP) servers.",
     implementation: "Engineered a robust backend featuring regex-based redaction of sensitive data (cookies, authorization headers, bearer tokens) and integrated AST validation to guarantee syntactically correct Python code generation.",
-    impact: "Built a real-time streaming log component for deep pipeline visibility and empowered AI assistants to autonomously interact with websites through the instantaneous output of ready-to-deploy MCP tool packages."
+    impact: "Built a real-time streaming log component for deep pipeline visibility and empowered AI assistants to autonomously interact with websites through the instantaneous output of ready-to-deploy MCP tool packages.",
+    github: "https://github.com/Cheezu-hub/mcp_forge-extension-",
+    badge: "🏆 GDG Super SUS Hackathon \u2013 1st Prize",
+    featured: true
   },
   {
     title: "SymbioTech \u2013 AI-Powered Industrial Symbiosis Platform",
@@ -18,7 +23,8 @@ const projects = [
     problem: "Critical inefficiencies in matching massive industrial waste byproducts to equivalent cross-industry resource demands.",
     architecture: "Developed a highly scalable resource-matching engine using FastAPI, backed by a normalized PostgreSQL database designed to manage complex relational structures for over 100 integrated industry nodes.",
     implementation: "Architected a centralized React-driven dashboard capable of rendering 50+ concurrent resource flows, establishing real-time tracking of waste-to-input lifecycle conversions.",
-    impact: "Increased global industrial waste reuse efficiency by 30% through automated similarity scoring and rule-based filtering, whilst plummeting data retrieval latency by 15% through optimized algorithmic database queries."
+    impact: "Increased global industrial waste reuse efficiency by 30% through automated similarity scoring and rule-based filtering, whilst plummeting data retrieval latency by 15% through optimized algorithmic database queries.",
+    github: "https://github.com/Cheezu-hub/symbiosis-ai"
   },
   {
     title: "Analies \u2013 Privacy Policy Analyzer",
@@ -26,7 +32,9 @@ const projects = [
     problem: "End-users blindly consenting to convoluted privacy policies without visibility into high-risk, data-sharing implications.",
     architecture: "Engineered a real-time DOM parsing pipeline utilizing asynchronous JavaScript to rigorously scan 1,000+ words of complex legal text in under 2 seconds per page instance.",
     implementation: "Implemented a sophisticated regex-based classification engine to autonomously isolate high-risk clauses and effectively deployed the Chrome Storage API for persistent state management.",
-    impact: "Decreased repeated policy analysis computing spans by 60% for returning users, and achieved a 90% accuracy classification threshold, radically improving the frontend client experience."
+    impact: "Decreased repeated policy analysis computing spans by 60% for returning users, and achieved a 90% accuracy classification threshold, radically improving the frontend client experience.",
+    github: "https://github.com/Cheezu-hub/Analies---Privacy-Policy-Analyzer",
+    badge: "🏆 AlgoZenith Hackathon \u2013 3rd Place"
   },
   {
     title: "Swaply \u2013 Peer-to-Peer Coupon Exchange",
@@ -34,7 +42,8 @@ const projects = [
     problem: "Absence of a secure, transparent, and centralized application layer for peer-to-peer digital active coupon trading.",
     architecture: "Conceptualized and deployed a centralized P2P marketplace leveraging a lightweight Flask backend paired with an SQLite database highly optimized for rapid concurrent transactional queries.",
     implementation: "Built a dynamic and responsive frontend operating on structural HTML/CSS with fully verified CRUD operation lifecycles across marketplace user bases.",
-    impact: "Effectively processed secure transactions for over 50+ active listing environments while maintaining a 100% mobile-responsive evaluation score, assuring consistent omni-channel platform availability."
+    impact: "Effectively processed secure transactions for over 50+ active listing environments while maintaining a 100% mobile-responsive evaluation score, assuring consistent omni-channel platform availability.",
+    github: ""
   }
 ];
 
@@ -80,42 +89,109 @@ function ProjectCard({ project }: { project: typeof projects[0] }) {
       className="h-full z-10"
     >
       <Card 
-        className="p-6 bg-neutral-900/50 border border-neutral-800 transition-colors h-full flex flex-col group relative overflow-hidden"
+        className={`p-6 bg-neutral-900/50 border ${project.featured ? 'border-neutral-700 ring-1 ring-neutral-800' : 'border-neutral-800'} transition-colors h-full flex flex-col group relative overflow-hidden`}
         style={{ transform: "translateZ(30px)" }}
       >
         <SpotlightHover className="from-white/5 via-white/5 to-transparent mix-blend-screen" size={400} />
         
-        <h3 className="text-xl md:text-2xl font-bold text-neutral-200 mb-2 relative z-10">{project.title}</h3>
+        {project.badge && (
+          <div className="mb-4">
+            <span className="text-[10px] uppercase tracking-widest bg-neutral-800 text-neutral-300 px-2 py-1 rounded border border-neutral-700 font-bold opacity-90">
+              {project.badge}
+            </span>
+          </div>
+        )}
+
+        <div className="flex justify-between items-start mb-2 relative z-10">
+          <motion.h3 
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+            className="text-xl md:text-2xl font-bold text-neutral-200"
+          >
+            {project.title}
+          </motion.h3>
+          
+          {project.github && (
+            <div className="hidden md:block">
+              <Magnetic>
+                <a 
+                  href={project.github} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="p-2 bg-neutral-800 rounded-full border border-neutral-700 hover:bg-neutral-700 transition-colors text-white"
+                >
+                  <i className="fa-brands fa-github w-4 h-4 flex items-center justify-center"></i>
+                </a>
+              </Magnetic>
+            </div>
+          )}
+        </div>
         
-        <div className="text-sm text-neutral-500 mb-6 font-mono relative z-10 group-hover:text-neutral-400 transition-colors duration-300">
+        <motion.div 
+          initial="hidden"
+          whileInView="visible"
+          variants={{
+            hidden: { opacity: 0 },
+            visible: { opacity: 1, transition: { staggerChildren: 0.05 } }
+          }}
+          className="text-sm text-neutral-500 mb-6 font-mono relative z-10 group-hover:text-neutral-400 transition-colors duration-300"
+        >
           {project.tech.split(", ").map((t, idx) => (
-            <span 
+            <motion.span 
               key={idx} 
+              variants={{
+                hidden: { opacity: 0, y: -5 },
+                visible: { opacity: 1, y: 0 }
+              }}
               className="inline-block mr-1 hover:text-white hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)] transition-all cursor-default"
             >
               {t}{idx < project.tech.split(", ").length - 1 ? "," : ""}
-            </span>
+            </motion.span>
           ))}
-        </div>
+        </motion.div>
         
-        <div className="space-y-4 flex-grow relative z-10">
-          <div>
+        <motion.div 
+          initial="hidden"
+          whileInView="visible"
+          variants={{
+            hidden: { opacity: 0 },
+            visible: { opacity: 1, transition: { staggerChildren: 0.1, delayChildren: 0.2 } }
+          }}
+          className="space-y-4 flex-grow relative z-10 mb-8"
+        >
+          <motion.div variants={{ hidden: { opacity: 0, x: -10 }, visible: { opacity: 1, x: 0 } }}>
             <span className="text-neutral-300 font-semibold">Problem: </span>
-            <span className="text-neutral-400">{project.problem}</span>
-          </div>
-          <div>
+            <span className="text-neutral-400 text-sm">{project.problem}</span>
+          </motion.div>
+          <motion.div variants={{ hidden: { opacity: 0, x: -10 }, visible: { opacity: 1, x: 0 } }}>
             <span className="text-neutral-300 font-semibold">Architecture: </span>
-            <span className="text-neutral-400">{project.architecture}</span>
-          </div>
-          <div>
+            <span className="text-neutral-400 text-sm">{project.architecture}</span>
+          </motion.div>
+          <motion.div variants={{ hidden: { opacity: 0, x: -10 }, visible: { opacity: 1, x: 0 } }}>
             <span className="text-neutral-300 font-semibold">Implementation: </span>
-            <span className="text-neutral-400">{project.implementation}</span>
-          </div>
-          <div>
+            <span className="text-neutral-400 text-sm">{project.implementation}</span>
+          </motion.div>
+          <motion.div variants={{ hidden: { opacity: 0, x: -10 }, visible: { opacity: 1, x: 0 } }}>
             <span className="text-neutral-300 font-semibold">Impact: </span>
-            <span className="text-neutral-400">{project.impact}</span>
+            <span className="text-neutral-400 text-sm">{project.impact}</span>
+          </motion.div>
+        </motion.div>
+
+        {project.github && (
+          <div className="relative z-10 pt-4 border-t border-neutral-800">
+            <a 
+              href={project.github} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm text-neutral-400 hover:text-white transition-colors group/link"
+            >
+              <i className="fa-brands fa-github text-base"></i>
+              <span className="border-b border-transparent group-hover/link:border-white pb-0.5">View Code</span>
+              <ExternalLink className="w-3 h-3" />
+            </a>
           </div>
-        </div>
+        )}
       </Card>
     </motion.div>
   );

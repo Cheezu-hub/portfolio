@@ -52,8 +52,8 @@ function ProjectCard({ project }: { project: typeof projects[0] }) {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
-  const mouseXSpring = useSpring(x, { stiffness: 300, damping: 30 });
-  const mouseYSpring = useSpring(y, { stiffness: 300, damping: 30 });
+  const mouseXSpring = useSpring(x, { stiffness: 150, damping: 25 });
+  const mouseYSpring = useSpring(y, { stiffness: 150, damping: 25 });
 
   const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], [5, -5]);
   const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], [-5, 5]);
@@ -85,6 +85,7 @@ function ProjectCard({ project }: { project: typeof projects[0] }) {
         rotateX,
         rotateY,
         transformStyle: "preserve-3d",
+        willChange: "transform",
       }}
       className="h-full z-10"
     >

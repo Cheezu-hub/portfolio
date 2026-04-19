@@ -55,6 +55,14 @@
   }
   body {
     @apply bg-background text-foreground;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  section {
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 1000px;
   }
 }
 

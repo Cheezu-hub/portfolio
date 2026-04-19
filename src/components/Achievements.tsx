@@ -128,7 +128,7 @@ export function Achievements() {
               viewport={{ once: true }}
               className="h-full"
             >
-              <Card className={`p-6 bg-neutral-900/50 border ${item.featured ? 'border-neutral-700 ring-1 ring-neutral-800' : 'border-neutral-800'} transition-all h-full flex flex-col items-start gap-4 group hover:border-neutral-600 relative overflow-hidden`}>
+              <Card className={`p-6 bg-neutral-900/50 border ${item.featured ? 'border-neutral-700 ring-1 ring-neutral-800' : 'border-neutral-800'} transition-all h-full flex flex-col items-start gap-4 group hover:border-neutral-600 relative overflow-hidden`} style={{ willChange: 'transform' }}>
 
 
                 <div className="flex items-start gap-4 w-full">
@@ -193,7 +193,7 @@ export function Achievements() {
                   viewport={{ once: true }}
                   className="h-full"
                 >
-                  <Card className="p-6 bg-neutral-900/50 border border-neutral-800 transition-all h-full flex flex-col justify-between group hover:border-neutral-700 relative overflow-hidden">
+                  <Card className="p-6 bg-neutral-900/50 border border-neutral-800 transition-all h-full flex flex-col justify-between group hover:border-neutral-700 relative overflow-hidden" style={{ willChange: 'transform' }}>
                     <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-neutral-800 via-neutral-600 to-neutral-800 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     <div>
                       <div className="flex items-center gap-2 mb-4">

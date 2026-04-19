@@ -57,7 +57,7 @@ function SkillCard({ category, index }: { category: typeof skillCategories[0], i
         className="h-full"
       >
         <motion.div whileHover="hover" className="h-full group">
-          <Card className="p-6 md:p-8 bg-neutral-900/40 border border-neutral-800 transition-all duration-500 h-full relative overflow-hidden flex flex-col justify-between group-hover:border-neutral-600 group-hover:bg-neutral-900/60 group-hover:shadow-[0_0_30px_rgba(255,255,255,0.03)] cursor-default">
+          <Card className="p-6 md:p-8 bg-neutral-900/40 border border-neutral-800 transition-all duration-500 h-full relative overflow-hidden flex flex-col justify-between group-hover:border-neutral-600 group-hover:bg-neutral-900/60 group-hover:shadow-[0_0_30px_rgba(255,255,255,0.03)] cursor-default" style={{ willChange: 'transform' }}>
             
             {/* Subtle Gradient Highlights */}
             {category.glowType === 'pattern' && (

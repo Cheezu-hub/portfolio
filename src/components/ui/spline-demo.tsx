@@ -1,6 +1,5 @@
-'use client'
-
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion"
+import { useRef } from 'react'
+import { motion, useMotionValue, useSpring, useTransform, useInView } from "framer-motion"
 import { SplineScene } from "@/components/ui/splite";
 import { Card } from "@/components/ui/card"
 import { Spotlight } from "@/components/ui/spotlight"
@@ -9,6 +8,8 @@ import { Magnetic } from "@/components/ui/magnetic"
 import { CVButton } from "@/components/ui/cv-button"
 
 export function SplineSceneBasic() {
+  const containerRef = useRef<HTMLDivElement>(null)
+  const isInView = useInView(containerRef, { once: false, amount: 0.1 })
   const x = useMotionValue(0)
   const y = useMotionValue(0)
 
@@ -28,7 +29,9 @@ export function SplineSceneBasic() {
 
   return (
     <Card 
+      ref={containerRef}
       className="w-full h-[600px] bg-black/[0.96] relative overflow-hidden border-neutral-800"
+      style={{ willChange: 'transform' }}
       onMouseMove={handleMouseMove}
       onMouseLeave={() => {
         x.set(0)
@@ -133,10 +136,12 @@ export function SplineSceneBasic() {
 
         {/* Right content */}
         <div className="flex-1 relative h-[300px] md:h-auto pointer-events-auto">
-          <SplineScene 
-            scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
-            className="w-full h-full"
-          />
+          {isInView && (
+            <SplineScene 
+              scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
+              className="w-full h-full"
+            />
+          )}
         </div>
       </div>
     </Card>

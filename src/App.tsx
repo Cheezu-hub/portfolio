@@ -22,7 +22,9 @@ function App() {
               linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px)
             `,
             backgroundSize: '100% 100%, 40px 40px, 40px 40px',
-            backgroundPosition: 'center center'
+            backgroundPosition: 'center center',
+            willChange: 'transform',
+            transform: 'translateZ(0)'
           }} 
         />
 
@@ -30,7 +32,9 @@ function App() {
         <div 
           className="fixed inset-0 z-0 pointer-events-none opacity-[0.02] mix-blend-screen"
           style={{ 
-            backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noise%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.8%22 numOctaves=%224%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noise)%22/%3E%3C/svg%3E")'
+            backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noise%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.8%22 numOctaves=%222%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noise)%22/%3E%3C/svg%3E")',
+            willChange: 'transform',
+            transform: 'translateZ(0)'
           }} 
         />
 

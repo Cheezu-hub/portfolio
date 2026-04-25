@@ -1,6 +1,6 @@
 import { useRef } from 'react'
 import { motion, useMotionValue, useSpring, useTransform, useInView } from "framer-motion"
-import { SplineScene } from "@/components/ui/splite";
+import { SparklesCore } from "@/components/ui/sparkles";
 import { Card } from "@/components/ui/card"
 import { Spotlight } from "@/components/ui/spotlight"
 import { Mail } from "lucide-react"
@@ -43,10 +43,23 @@ export function SplineSceneBasic() {
         fill="white"
       />
       
-      <div className="flex h-full flex-col md:flex-row">
-        {/* Left content */}
+      <div className="w-full absolute inset-0 h-full">
+        <SparklesCore
+          id="tsparticlesfullpage"
+          background="transparent"
+          minSize={0.6}
+          maxSize={1.4}
+          particleDensity={100}
+          className="w-full h-full"
+          particleColor="#FFFFFF"
+          speed={1}
+        />
+      </div>
+      
+      <div className="flex h-full flex-col items-center justify-center text-center z-10 relative">
+        {/* Main content */}
         <motion.div 
-          className="flex-1 p-8 relative z-10 flex flex-col justify-center"
+          className="flex-1 p-8 flex flex-col justify-center items-center"
           style={{ x: shiftX, y: shiftY }}
         >
           <motion.h2 
@@ -133,16 +146,6 @@ export function SplineSceneBasic() {
             </div>
           </motion.div>
         </motion.div>
-
-        {/* Right content */}
-        <div className="flex-1 relative h-[300px] md:h-auto pointer-events-auto">
-          {isInView && (
-            <SplineScene 
-              scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
-              className="w-full h-full"
-            />
-          )}
-        </div>
       </div>
     </Card>
   )

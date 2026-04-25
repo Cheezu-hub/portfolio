@@ -1,5 +1,5 @@
 import { useRef } from 'react'
-import { motion, useMotionValue, useSpring, useTransform, useInView } from "framer-motion"
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion"
 import { SparklesCore } from "@/components/ui/sparkles";
 import { Card } from "@/components/ui/card"
 import { Spotlight } from "@/components/ui/spotlight"
@@ -9,7 +9,7 @@ import { CVButton } from "@/components/ui/cv-button"
 
 export function SplineSceneBasic() {
   const containerRef = useRef<HTMLDivElement>(null)
-  const isInView = useInView(containerRef, { once: false, amount: 0.1 })
+
   const x = useMotionValue(0)
   const y = useMotionValue(0)
 

@@ -24,7 +24,8 @@ const projects = [
     architecture: "Developed a highly scalable resource-matching engine using FastAPI, backed by a normalized PostgreSQL database designed to manage complex relational structures for over 100 integrated industry nodes.",
     implementation: "Architected a centralized React-driven dashboard capable of rendering 50+ concurrent resource flows, establishing real-time tracking of waste-to-input lifecycle conversions.",
     impact: "Increased global industrial waste reuse efficiency by 30% through automated similarity scoring and rule-based filtering, whilst plummeting data retrieval latency by 15% through optimized algorithmic database queries.",
-    github: "https://github.com/Cheezu-hub/symbiosis-ai"
+    github: "https://github.com/Cheezu-hub/symbiosis-ai",
+    link: "https://symbiosis-ai.vercel.app/"
   },
   {
     title: "Analies \u2013 Privacy Policy Analyzer",
@@ -179,8 +180,8 @@ function ProjectCard({ project }: { project: typeof projects[0] }) {
           </motion.div>
         </motion.div>
 
-        {project.github && (
-          <div className="relative z-10 pt-4 border-t border-neutral-800">
+        <div className="relative z-10 pt-4 border-t border-neutral-800 flex gap-4">
+          {project.github && (
             <a 
               href={project.github} 
               target="_blank" 
@@ -191,8 +192,20 @@ function ProjectCard({ project }: { project: typeof projects[0] }) {
               <span className="border-b border-transparent group-hover/link:border-white pb-0.5">View Code</span>
               <ExternalLink className="w-3 h-3" />
             </a>
-          </div>
-        )}
+          )}
+          {'link' in project && project.link && (
+            <a 
+              href={project.link as string} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm text-neutral-400 hover:text-white transition-colors group/link"
+            >
+              <i className="fa-solid fa-rocket text-base text-blue-400"></i>
+              <span className="border-b border-transparent group-hover/link:border-white pb-0.5">Live Demo</span>
+              <ExternalLink className="w-3 h-3" />
+            </a>
+          )}
+        </div>
       </Card>
     </motion.div>
   );

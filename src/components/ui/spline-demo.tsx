@@ -71,30 +71,33 @@ export function SplineSceneBasic() {
             Rajana Chaitanya
           </motion.h2>
           
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 leading-tight">
-            {"Full Stack Developer &".split(" ").map((word, i) => (
-              <motion.span
-                key={`line1-${i}`}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.3 + i * 0.1 }}
-                className="inline-block mr-2 md:mr-3"
-              >
-                {word}
-              </motion.span>
-            ))}
-            <br className="hidden md:block"/>
-            {"AI Engineer".split(" ").map((word, i) => (
-              <motion.span
-                key={`line2-${i}`}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.3 + (i + 4) * 0.1 }}
-                className="inline-block mr-2 md:mr-3 mt-2"
-              >
-                {word}
-              </motion.span>
-            ))}
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 leading-[1.2] py-4 px-2">
+            <span className="block mb-2">
+              {"Full Stack Developer &".split(" ").map((word, i) => (
+                <motion.span
+                  key={`line1-${i}`}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.3 + i * 0.1 }}
+                  className="inline-block mr-2 md:mr-3"
+                >
+                  {word}
+                </motion.span>
+              ))}
+            </span>
+            <span className="block">
+              {"AI Engineer".split(" ").map((word, i) => (
+                <motion.span
+                  key={`line2-${i}`}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.3 + (i + 4) * 0.1 }}
+                  className="inline-block mr-2 md:mr-3"
+                >
+                  {word}
+                </motion.span>
+              ))}
+            </span>
           </h1>
           
           <motion.p 

@@ -11,8 +11,8 @@ const achievements = [
     tags: ["React", "Node.js", "Full Stack", "Hackathon"],
     featured: true,
     images: [
-      { src: "/images/achievements/gdg-1.jpg", caption: "Award Ceremony \u2013 GDG Super SUS Hackathon (1st Prize)" },
-      { src: "/images/achievements/gdg-2.jpg", caption: "Award Ceremony \u2013 GDG Super SUS Hackathon (1st Prize)" }
+      { src: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80&w=1000", caption: "Award Ceremony \u2013 GDG Super SUS Hackathon (1st Prize)" },
+      { src: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=1000", caption: "Award Ceremony \u2013 GDG Super SUS Hackathon (1st Prize)" }
     ]
   },
   {
@@ -21,7 +21,7 @@ const achievements = [
     icon: <Medal className="w-8 h-8 text-neutral-300" />,
     tags: ["DSA", "Problem Solving", "Scalability"],
     images: [
-      { src: "/images/achievements/algozenith-1.jpg", caption: "Award Ceremony \u2013 AlgoZenith Hackathon (3rd Place)" }
+      { src: "https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?auto=format&fit=crop&q=80&w=1000", caption: "Award Ceremony \u2013 AlgoZenith Hackathon (3rd Place)" }
     ]
   },
   {

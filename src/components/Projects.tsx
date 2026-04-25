@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { motion, useMotionValue, useTransform, useSpring } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { SpotlightHover } from "@/components/ui/spotlight-hover";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Rocket } from "lucide-react";
 import { Magnetic } from "@/components/ui/magnetic";
 
 const projects = [
@@ -200,7 +200,7 @@ function ProjectCard({ project }: { project: typeof projects[0] }) {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-sm text-neutral-400 hover:text-white transition-colors group/link"
             >
-              <i className="fa-solid fa-rocket text-base text-blue-400"></i>
+              <Rocket className="w-4 h-4 text-blue-400" />
               <span className="border-b border-transparent group-hover/link:border-white pb-0.5">Live Demo</span>
               <ExternalLink className="w-3 h-3" />
             </a>

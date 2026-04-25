@@ -38,12 +38,12 @@ A results-driven Full Stack Developer and AI Engineer with a robust system desig
 * **Implementation**: Implemented a sophisticated regex-based classification engine to autonomously isolate high-risk clauses and effectively deployed the Chrome Storage API for persistent state management.
 * **Impact**: Decreased repeated policy analysis computing spans by 60% for returning users, and achieved a 90% accuracy classification threshold, radically improving the frontend client experience.
 
-### Swaply – Peer-to-Peer Coupon Exchange
-*Technologies: Flask, SQLite, HTML/CSS*
-* **Problem**: Absence of a secure, transparent, and centralized application layer for peer-to-peer digital active coupon trading.
-* **Architecture**: Conceptualized and deployed a centralized P2P marketplace leveraging a lightweight Flask backend paired with an SQLite database highly optimized for rapid concurrent transactional queries.
-* **Implementation**: Built a dynamic and responsive frontend operating on structural HTML/CSS with fully verified CRUD operation lifecycles across marketplace user bases.
-* **Impact**: Effectively processed secure transactions for over 50+ active listing environments while maintaining a 100% mobile-responsive evaluation score, assuring consistent omni-channel platform availability.
+### Universal Webhook Adapter – AI-Powered Schema Normalizer
+*Technologies: FastAPI, React, Groq AI (Llama 3), SQLite, Tailwind CSS, asyncio*
+* **Problem**: Critical friction in managing diverse JSON webhook schemas from multiple sources (Stripe, GitHub, etc.) and normalizing them for consistent internal processing.
+* **Architecture**: Architected a production-ready FastAPI service featuring HMAC-SHA256 signature verification, asyncio-driven background processing, and a multi-stage queue for AI-powered payload normalization.
+* **Implementation**: Engineered a real-time React dashboard with built-in simulation tools to test Stripe/GitHub webhooks, integrated Groq (Llama-3.3-70b) for intelligent schema mapping, and implemented idempotency logic to prevent duplicate processing.
+* **Impact**: Streamlined webhook integration by providing a standard schema output for any JSON input, reduced processing overhead with immediate 202 responses, and enhanced system reliability through automated retries and signature validation.
 
 ---
 

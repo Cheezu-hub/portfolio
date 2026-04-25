@@ -37,13 +37,13 @@ const projects = [
     badge: "🏆 AlgoZenith Hackathon \u2013 3rd Place"
   },
   {
-    title: "Swaply \u2013 Peer-to-Peer Coupon Exchange",
-    tech: "Flask, SQLite, HTML/CSS",
-    problem: "Absence of a secure, transparent, and centralized application layer for peer-to-peer digital active coupon trading.",
-    architecture: "Conceptualized and deployed a centralized P2P marketplace leveraging a lightweight Flask backend paired with an SQLite database highly optimized for rapid concurrent transactional queries.",
-    implementation: "Built a dynamic and responsive frontend operating on structural HTML/CSS with fully verified CRUD operation lifecycles across marketplace user bases.",
-    impact: "Effectively processed secure transactions for over 50+ active listing environments while maintaining a 100% mobile-responsive evaluation score, assuring consistent omni-channel platform availability.",
-    github: ""
+    title: "Universal Webhook Adapter \u2013 AI-Powered Schema Normalizer",
+    tech: "FastAPI, React, Groq AI (Llama 3), SQLite, Tailwind CSS, asyncio",
+    problem: "Critical friction in managing diverse JSON webhook schemas from multiple sources (Stripe, GitHub, etc.) and normalizing them for consistent internal processing.",
+    architecture: "Architected a production-ready FastAPI service featuring HMAC-SHA256 signature verification, asyncio-driven background processing, and a multi-stage queue for AI-powered payload normalization.",
+    implementation: "Engineered a real-time React dashboard with built-in simulation tools to test Stripe/GitHub webhooks, integrated Groq (Llama-3.3-70b) for intelligent schema mapping, and implemented idempotency logic to prevent duplicate processing.",
+    impact: "Streamlined webhook integration by providing a standard schema output for any JSON input, reduced processing overhead with immediate 202 responses, and enhanced system reliability through automated retries and signature validation.",
+    github: "https://github.com/Cheezu-hub/universal-webhooks"
   }
 ];
 

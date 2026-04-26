@@ -44,6 +44,8 @@ A results-driven Full Stack Developer and AI Engineer with a robust system desig
 * **Architecture**: Architected a production-ready FastAPI service featuring HMAC-SHA256 signature verification, asyncio-driven background processing, and a multi-stage queue for AI-powered payload normalization.
 * **Implementation**: Engineered a real-time React dashboard with built-in simulation tools to test Stripe/GitHub webhooks, integrated Groq (Llama-3.3-70b) for intelligent schema mapping, and implemented idempotency logic to prevent duplicate processing.
 * **Impact**: Streamlined webhook integration by providing a standard schema output for any JSON input, reduced processing overhead with immediate 202 responses, and enhanced system reliability through automated retries and signature validation.
+* **Live Demo**: [universal-webhooks.vercel.app](https://universal-webhooks.vercel.app)
+* **GitHub**: [github.com/Cheezu-hub/universal-webhooks](https://github.com/Cheezu-hub/universal-webhooks)
 
 ---
 

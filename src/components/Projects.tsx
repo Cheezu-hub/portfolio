@@ -44,7 +44,8 @@ const projects = [
     architecture: "Architected a production-ready FastAPI service featuring HMAC-SHA256 signature verification, asyncio-driven background processing, and a multi-stage queue for AI-powered payload normalization.",
     implementation: "Engineered a real-time React dashboard with built-in simulation tools to test Stripe/GitHub webhooks, integrated Groq (Llama-3.3-70b) for intelligent schema mapping, and implemented idempotency logic to prevent duplicate processing.",
     impact: "Streamlined webhook integration by providing a standard schema output for any JSON input, reduced processing overhead with immediate 202 responses, and enhanced system reliability through automated retries and signature validation.",
-    github: "https://github.com/Cheezu-hub/universal-webhooks"
+    github: "https://github.com/Cheezu-hub/universal-webhooks",
+    link: "https://universal-webhooks.vercel.app"
   }
 ];
 

@@ -4,13 +4,17 @@ import { About } from "@/components/About"
 import { Projects } from "@/components/Projects"
 import { Skills } from "@/components/Skills"
 import { Achievements } from "@/components/Achievements"
+import { Contact } from "@/components/Contact"
 import { Footer } from "@/components/Footer"
+import { Navbar } from "@/components/Navbar"
+import { Cursor } from "@/components/Cursor"
 
 function App() {
   return (
     <ReactLenis root>
       <div className="min-h-screen bg-black text-white font-sans overflow-x-hidden selection:bg-neutral-800 selection:text-white relative">
-
+        <Cursor />
+        <Navbar />
         
         {/* Subtle Background Grid overlay */}
         <div 
@@ -38,17 +42,30 @@ function App() {
           }} 
         />
 
-
-        
-        <main className="relative z-10 flex flex-col items-center justify-center pt-8 md:pt-16 pb-0">
-          <div className="max-w-7xl w-full px-4 mb-20">
+        <main className="relative z-10 flex flex-col items-center justify-center pt-24 md:pt-32 pb-0">
+          <section id="home" className="max-w-7xl w-full px-4 mb-20 scroll-mt-32">
             <SplineSceneBasic />
-          </div>
+          </section>
           
-          <About />
-          <Projects />
-          <Skills />
-          <Achievements />
+          <div className="w-full space-y-32">
+            <section id="about" className="scroll-mt-32">
+              <About />
+            </section>
+            
+            <section id="projects" className="scroll-mt-32">
+              <Projects />
+            </section>
+            
+            <section id="skills" className="scroll-mt-32">
+              <Skills />
+            </section>
+            
+            <section id="achievements" className="scroll-mt-32">
+              <Achievements />
+            </section>
+
+            <Contact />
+          </div>
         </main>
         
         <Footer />

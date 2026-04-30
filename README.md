@@ -20,4 +20,16 @@ A modern, high-performance portfolio built with React, TypeScript, and Vite. Des
 - **3D Elements:** Integrated Spline scenes for a premium look.
 - **Dynamic Content:** Showcasing projects, achievements, and technical skills.
 
+## 📧 Contact
+
+Feel free to reach out for collaborations or just a friendly hello!
+
+- **Email:** [Your Email Here]
+- **LinkedIn:** [Your LinkedIn Profile]
+- **GitHub:** [Your GitHub Profile]
+
+---
+Built with ❤️ by Chaitanya
+
+
 

@@ -13,3 +13,11 @@ A modern, high-performance portfolio built with React, TypeScript, and Vite. Des
 - **Icons:** Lucide React
 - **Animations:** Spline, Three.js
 
+## ✨ Key Features
+
+- **Responsive Design:** Fully optimized for mobile, tablet, and desktop.
+- **Interactive UI:** Smooth transitions and micro-animations using Framer Motion.
+- **3D Elements:** Integrated Spline scenes for a premium look.
+- **Dynamic Content:** Showcasing projects, achievements, and technical skills.
+
+

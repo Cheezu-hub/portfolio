@@ -5,3 +5,11 @@ Welcome to my personal portfolio! This project showcases my work, skills, and ac
 ## 🌟 Overview
 
 A modern, high-performance portfolio built with React, TypeScript, and Vite. Designed with a focus on aesthetics, responsiveness, and smooth user experience.
+
+## 🛠️ Tech Stack
+
+- **Frontend:** React, TypeScript, Vite
+- **Styling:** Tailwind CSS, Framer Motion
+- **Icons:** Lucide React
+- **Animations:** Spline, Three.js
+

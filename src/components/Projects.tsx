@@ -57,8 +57,8 @@ function ProjectCard({ project }: { project: typeof projects[0] }) {
   const mouseXSpring = useSpring(x, { stiffness: 150, damping: 25 });
   const mouseYSpring = useSpring(y, { stiffness: 150, damping: 25 });
 
-  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], [5, -5]);
-  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], [-5, 5]);
+  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], [7, -7]);
+  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], [-7, 7]);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!ref.current) return;
@@ -92,25 +92,26 @@ function ProjectCard({ project }: { project: typeof projects[0] }) {
       className="h-full z-10"
     >
       <Card 
-        className={`p-6 bg-neutral-900/50 border ${project.featured ? 'border-neutral-700 ring-1 ring-neutral-800' : 'border-neutral-800'} transition-colors h-full flex flex-col group relative overflow-hidden`}
+        className={`p-8 bg-neutral-900/40 backdrop-blur-xl border ${project.featured ? 'border-primary/50 shadow-[0_0_20px_rgba(var(--primary),0.1)]' : 'border-neutral-800/50'} transition-all duration-500 h-full flex flex-col group relative overflow-hidden rounded-[2rem]`}
         style={{ transform: "translateZ(30px)" }}
       >
-        <SpotlightHover className="from-white/5 via-white/5 to-transparent mix-blend-screen" size={400} />
+        <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        <SpotlightHover className="from-white/10 via-white/5 to-transparent mix-blend-overlay" size={500} />
         
         {project.badge && (
-          <div className="mb-4">
-            <span className="text-[10px] uppercase tracking-widest bg-neutral-800 text-neutral-300 px-2 py-1 rounded border border-neutral-700 font-bold opacity-90">
+          <div className="mb-6">
+            <span className="text-[10px] uppercase tracking-[0.2em] bg-neutral-800/80 text-white px-3 py-1.5 rounded-full border border-neutral-700 font-bold backdrop-blur-sm">
               {project.badge}
             </span>
           </div>
         )}
 
-        <div className="flex justify-between items-start mb-2 relative z-10">
+        <div className="flex justify-between items-start mb-4 relative z-10">
           <motion.h3 
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
-            className="text-xl md:text-2xl font-bold text-neutral-200"
+            className="text-2xl md:text-3xl font-bold text-white font-space tracking-tight"
           >
             {project.title}
           </motion.h3>
@@ -122,9 +123,9 @@ function ProjectCard({ project }: { project: typeof projects[0] }) {
                   href={project.github} 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="p-2 bg-neutral-800 rounded-full border border-neutral-700 hover:bg-neutral-700 transition-colors text-white"
+                  className="p-3 bg-neutral-800/50 rounded-2xl border border-neutral-700/50 hover:bg-neutral-700 hover:text-white transition-all text-neutral-400 backdrop-blur-sm shadow-xl"
                 >
-                  <i className="fa-brands fa-github w-4 h-4 flex items-center justify-center"></i>
+                  <i className="fa-brands fa-github text-lg"></i>
                 </a>
               </Magnetic>
             </div>
@@ -138,18 +139,18 @@ function ProjectCard({ project }: { project: typeof projects[0] }) {
             hidden: { opacity: 0 },
             visible: { opacity: 1, transition: { staggerChildren: 0.05 } }
           }}
-          className="text-sm text-neutral-500 mb-6 font-mono relative z-10 group-hover:text-neutral-400 transition-colors duration-300"
+          className="flex flex-wrap gap-2 mb-8 relative z-10"
         >
           {project.tech.split(", ").map((t, idx) => (
             <motion.span 
               key={idx} 
               variants={{
-                hidden: { opacity: 0, y: -5 },
-                visible: { opacity: 1, y: 0 }
+                hidden: { opacity: 0, scale: 0.8 },
+                visible: { opacity: 1, scale: 1 }
               }}
-              className="inline-block mr-1 hover:text-white hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)] transition-all cursor-default"
+              className="px-2.5 py-1 text-[11px] font-medium bg-neutral-800/30 text-neutral-400 border border-neutral-700/30 rounded-lg font-mono hover:bg-neutral-800/60 hover:text-white transition-all cursor-default"
             >
-              {t}{idx < project.tech.split(", ").length - 1 ? "," : ""}
+              {t}
             </motion.span>
           ))}
         </motion.div>
@@ -161,37 +162,39 @@ function ProjectCard({ project }: { project: typeof projects[0] }) {
             hidden: { opacity: 0 },
             visible: { opacity: 1, transition: { staggerChildren: 0.1, delayChildren: 0.2 } }
           }}
-          className="space-y-4 flex-grow relative z-10 mb-8"
+          className="space-y-5 flex-grow relative z-10 mb-10"
         >
-          <motion.div variants={{ hidden: { opacity: 0, x: -10 }, visible: { opacity: 1, x: 0 } }}>
-            <span className="text-neutral-300 font-semibold">Problem: </span>
-            <span className="text-neutral-400 text-sm">{project.problem}</span>
-          </motion.div>
-          <motion.div variants={{ hidden: { opacity: 0, x: -10 }, visible: { opacity: 1, x: 0 } }}>
-            <span className="text-neutral-300 font-semibold">Architecture: </span>
-            <span className="text-neutral-400 text-sm">{project.architecture}</span>
-          </motion.div>
-          <motion.div variants={{ hidden: { opacity: 0, x: -10 }, visible: { opacity: 1, x: 0 } }}>
-            <span className="text-neutral-300 font-semibold">Implementation: </span>
-            <span className="text-neutral-400 text-sm">{project.implementation}</span>
-          </motion.div>
-          <motion.div variants={{ hidden: { opacity: 0, x: -10 }, visible: { opacity: 1, x: 0 } }}>
-            <span className="text-neutral-300 font-semibold">Impact: </span>
-            <span className="text-neutral-400 text-sm">{project.impact}</span>
-          </motion.div>
+          {[
+            { label: "Problem", content: project.problem },
+            { label: "Architecture", content: project.architecture },
+            { label: "Implementation", content: project.implementation },
+            { label: "Impact", content: project.impact }
+          ].map((item, i) => (
+            <motion.div 
+              key={i}
+              variants={{ hidden: { opacity: 0, x: -10 }, visible: { opacity: 1, x: 0 } }}
+              className="group/item"
+            >
+              <div className="text-[11px] uppercase tracking-widest text-neutral-500 mb-1 font-bold group-hover/item:text-neutral-300 transition-colors">{item.label}</div>
+              <div className="text-neutral-400 text-[15px] leading-relaxed group-hover/item:text-neutral-300 transition-colors">{item.content}</div>
+            </motion.div>
+          ))}
         </motion.div>
 
-        <div className="relative z-10 pt-4 border-t border-neutral-800 flex gap-4">
+        <div className="relative z-10 pt-6 border-t border-neutral-800/50 flex gap-6 mt-auto">
           {project.github && (
             <a 
               href={project.github} 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm text-neutral-400 hover:text-white transition-colors group/link"
+              className="inline-flex items-center gap-2 text-sm font-medium text-neutral-400 hover:text-white transition-all group/link"
             >
-              <i className="fa-brands fa-github text-base"></i>
-              <span className="border-b border-transparent group-hover/link:border-white pb-0.5">View Code</span>
-              <ExternalLink className="w-3 h-3" />
+              <i className="fa-brands fa-github text-lg"></i>
+              <span className="relative overflow-hidden">
+                <span className="inline-block transition-transform duration-300 group-hover/link:-translate-y-full">View Code</span>
+                <span className="absolute top-0 left-0 inline-block translate-y-full transition-transform duration-300 group-hover/link:translate-y-0 text-white">View Code</span>
+              </span>
+              <ExternalLink className="w-3.5 h-3.5 opacity-0 group-hover/link:opacity-100 transition-opacity" />
             </a>
           )}
           {'link' in project && project.link && (
@@ -199,11 +202,14 @@ function ProjectCard({ project }: { project: typeof projects[0] }) {
               href={project.link as string} 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm text-neutral-400 hover:text-white transition-colors group/link"
+              className="inline-flex items-center gap-2 text-sm font-medium text-neutral-400 hover:text-white transition-all group/link"
             >
-              <Rocket className="w-4 h-4 text-blue-400" />
-              <span className="border-b border-transparent group-hover/link:border-white pb-0.5">Live Demo</span>
-              <ExternalLink className="w-3 h-3" />
+              <Rocket className="w-4 h-4 text-blue-400 group-hover:animate-bounce" />
+              <span className="relative overflow-hidden">
+                <span className="inline-block transition-transform duration-300 group-hover/link:-translate-y-full">Live Demo</span>
+                <span className="absolute top-0 left-0 inline-block translate-y-full transition-transform duration-300 group-hover/link:translate-y-0 text-white">Live Demo</span>
+              </span>
+              <ExternalLink className="w-3.5 h-3.5 opacity-0 group-hover/link:opacity-100 transition-opacity" />
             </a>
           )}
         </div>

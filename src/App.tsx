@@ -1,4 +1,5 @@
 import { ReactLenis } from 'lenis/react'
+import { motion, useScroll, useSpring } from "framer-motion"
 import { SplineSceneBasic } from "@/components/ui/spline-demo"
 import { About } from "@/components/About"
 import { Projects } from "@/components/Projects"
@@ -10,10 +11,24 @@ import { Navbar } from "@/components/Navbar"
 import { Cursor } from "@/components/Cursor"
 
 function App() {
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
+
   return (
     <ReactLenis root>
       <div className="min-h-screen bg-black text-white font-sans overflow-x-hidden selection:bg-neutral-800 selection:text-white relative">
         <Cursor />
+        
+        {/* Scroll Progress Bar */}
+        <motion.div
+          className="fixed top-0 left-0 right-0 h-1 bg-white origin-left z-[200] shadow-[0_0_15px_rgba(255,255,255,0.5)]"
+          style={{ scaleX }}
+        />
+
         <Navbar />
         
         {/* Subtle Background Grid overlay */}

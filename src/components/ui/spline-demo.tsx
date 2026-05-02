@@ -30,7 +30,7 @@ export function SplineSceneBasic() {
   return (
     <Card 
       ref={containerRef}
-      className="w-full h-[600px] bg-black/[0.96] relative overflow-hidden border-neutral-800"
+      className="w-full h-[650px] bg-black/[0.96] relative overflow-hidden border-neutral-800 shadow-2xl"
       style={{ willChange: 'transform' }}
       onMouseMove={handleMouseMove}
       onMouseLeave={() => {
@@ -43,43 +43,59 @@ export function SplineSceneBasic() {
         fill="white"
       />
       
+      {/* Dynamic Glow Overlay */}
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+        <div className="absolute -top-1/4 -left-1/4 w-1/2 h-1/2 bg-primary/10 blur-[120px] rounded-full opacity-50" />
+        <div className="absolute -bottom-1/4 -right-1/4 w-1/2 h-1/2 bg-blue-500/10 blur-[120px] rounded-full opacity-50" />
+      </div>
+
       <div className="w-full absolute inset-0 h-full">
         <SparklesCore
           id="tsparticlesfullpage"
           background="transparent"
-          minSize={0.6}
-          maxSize={1.4}
-          particleDensity={100}
+          minSize={0.4}
+          maxSize={1}
+          particleDensity={70}
           className="w-full h-full"
           particleColor="#FFFFFF"
-          speed={1}
+          speed={0.5}
         />
       </div>
       
       <div className="flex h-full flex-col items-center justify-center text-center z-10 relative">
-        {/* Main content */}
         <motion.div 
           className="flex-1 p-8 flex flex-col justify-center items-center"
           style={{ x: shiftX, y: shiftY }}
         >
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            className="mb-6 px-4 py-1.5 rounded-full bg-neutral-900/50 border border-neutral-800 backdrop-blur-sm"
+          >
+            <span className="text-sm font-medium text-neutral-400 tracking-wider font-archivo">
+              OPEN TO NEW OPPORTUNITIES
+            </span>
+          </motion.div>
+
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-xl md:text-2xl text-neutral-400 mb-2 font-medium tracking-wide"
+            className="text-xl md:text-2xl text-neutral-500 mb-2 font-medium tracking-tight font-space"
           >
             Rajana Chaitanya
           </motion.h2>
           
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 leading-[1.2] py-4 px-2">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-white via-neutral-200 to-neutral-500 leading-[1.1] py-4 px-2 font-space tracking-tighter">
             <span className="block mb-2">
               {"Full Stack Developer &".split(" ").map((word, i) => (
                 <motion.span
                   key={`line1-${i}`}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.3 + i * 0.1 }}
-                  className="inline-block mr-2 md:mr-3"
+                  initial={{ opacity: 0, filter: 'blur(10px)', y: 20 }}
+                  animate={{ opacity: 1, filter: 'blur(0px)', y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.3 + i * 0.1, ease: "easeOut" }}
+                  className="inline-block mr-3 md:mr-4"
                 >
                   {word}
                 </motion.span>
@@ -89,10 +105,10 @@ export function SplineSceneBasic() {
               {"AI Engineer".split(" ").map((word, i) => (
                 <motion.span
                   key={`line2-${i}`}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.3 + (i + 4) * 0.1 }}
-                  className="inline-block mr-2 md:mr-3"
+                  initial={{ opacity: 0, filter: 'blur(10px)', y: 20 }}
+                  animate={{ opacity: 1, filter: 'blur(0px)', y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.3 + (i + 4) * 0.1, ease: "easeOut" }}
+                  className="inline-block mr-3 md:mr-4"
                 >
                   {word}
                 </motion.span>
@@ -101,55 +117,49 @@ export function SplineSceneBasic() {
           </h1>
           
           <motion.p 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            className="mt-6 text-neutral-300 max-w-lg leading-relaxed"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1 }}
+            className="mt-8 text-neutral-400 max-w-xl text-lg leading-relaxed font-archivo"
           >
-            Architecting scalable full-stack systems and integrating advanced AI/LLM pipelines to solve complex, real-world problems.
+            Architecting scalable full-stack systems and integrating advanced <span className="text-white">AI/LLM pipelines</span> to solve complex, real-world problems.
           </motion.p>
+
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 1 }}
-            className="mt-8 flex flex-wrap gap-4 items-center"
+            transition={{ duration: 0.5, delay: 1.2 }}
+            className="mt-12 flex flex-wrap gap-5 items-center"
           >
             <CVButton />
-            <div className="flex gap-3 items-center">
-              <Magnetic>
-                <a 
-                  href="https://github.com/Cheezu-hub" 
-                  target="_blank" 
-                  rel="noreferrer" 
-                  className="p-2 md:p-3 bg-neutral-900 rounded-full border border-neutral-800 hover:bg-neutral-800 transition-colors text-white flex items-center justify-center w-10 h-10 md:w-12 md:h-12"
-                >
-                  <i className="fa-brands fa-github text-xl md:text-2xl"></i>
-                </a>
-              </Magnetic>
-              <Magnetic>
-                <a 
-                  href="https://www.linkedin.com/in/rajana-chaitanya/" 
-                  target="_blank" 
-                  rel="noreferrer" 
-                  className="p-2 md:p-3 bg-neutral-900 rounded-full border border-neutral-800 hover:bg-neutral-800 transition-colors text-white flex items-center justify-center w-10 h-10 md:w-12 md:h-12"
-                >
-                  <i className="fa-brands fa-linkedin-in text-xl md:text-2xl"></i>
-                </a>
-              </Magnetic>
-              <Magnetic>
-                <a 
-                  href="https://mail.google.com/mail/?view=cm&fs=1&to=rajanachaitanya29@gmail.com&su=Contact%20from%20Portfolio" 
-                  target="_blank"
-                  rel="noreferrer"
-                  className="p-2 md:p-3 bg-neutral-900 rounded-full border border-neutral-800 hover:bg-neutral-800 transition-colors text-white flex items-center justify-center w-10 h-10 md:w-12 md:h-12"
-                >
-                  <Mail className="w-5 h-5 md:w-6 md:h-6" />
-                </a>
-              </Magnetic>
+            <div className="flex gap-4 items-center">
+              {[
+                { icon: "fa-github", href: "https://github.com/Cheezu-hub" },
+                { icon: "fa-linkedin-in", href: "https://www.linkedin.com/in/rajana-chaitanya/" },
+                { icon: "mail", href: "mailto:rajanachaitanya29@gmail.com", isLucide: true }
+              ].map((link, idx) => (
+                <Magnetic key={idx}>
+                  <a 
+                    href={link.href} 
+                    target="_blank" 
+                    rel="noreferrer" 
+                    className="p-3 bg-neutral-900/50 rounded-2xl border border-neutral-800/50 hover:bg-neutral-800 hover:border-neutral-700 transition-all text-white flex items-center justify-center w-12 h-12 group shadow-xl backdrop-blur-md"
+                  >
+                    {link.isLucide ? (
+                      <Mail className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                    ) : (
+                      <i className={`fa-brands ${link.icon} text-xl group-hover:scale-110 transition-transform`}></i>
+                    )}
+                  </a>
+                </Magnetic>
+              ))}
             </div>
           </motion.div>
         </motion.div>
       </div>
+      
+      {/* Bottom decorative bar */}
+      <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-neutral-800 to-transparent" />
     </Card>
   )
 }

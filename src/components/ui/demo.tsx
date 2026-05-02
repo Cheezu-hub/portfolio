@@ -69,7 +69,7 @@ export function SparklesPreviewColorful() {
         />
       </div>
       <div className="flex flex-col items-center justify-center gap-4 relative z-20">
-        <h1 className="md:text-7xl text-3xl lg:text-9xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400">
+        <h1 className="md:text-7xl text-3xl lg:text-9xl font-bold pb-2 text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400">
           The Future
         </h1>
         <p className="text-neutral-300 cursor-default text-center">

@@ -116,7 +116,7 @@ export function Achievements() {
           <div className="inline-block px-3 py-1 rounded-full bg-neutral-900 border border-neutral-800 text-xs font-medium text-neutral-400 mb-6 uppercase tracking-widest">
             Recognition
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-500 font-space tracking-tight">
+          <h2 className="text-4xl md:text-5xl font-bold pb-2 bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-500 font-space tracking-tight">
             Milestones & Honors
           </h2>
         </div>

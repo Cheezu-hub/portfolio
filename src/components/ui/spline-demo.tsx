@@ -30,7 +30,7 @@ export function SplineSceneBasic() {
   return (
     <Card 
       ref={containerRef}
-      className="w-full h-[650px] bg-black/[0.96] relative overflow-hidden border-neutral-800 shadow-2xl"
+      className="w-full min-h-[90vh] md:min-h-screen py-24 bg-black/[0.96] relative overflow-hidden border-neutral-800 shadow-2xl flex items-center justify-center"
       style={{ willChange: 'transform' }}
       onMouseMove={handleMouseMove}
       onMouseLeave={() => {
@@ -82,45 +82,25 @@ export function SplineSceneBasic() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-xl md:text-2xl text-neutral-500 mb-2 font-medium tracking-tight font-space"
+            className="text-xl md:text-2xl lg:text-3xl text-neutral-400 mb-6 font-medium tracking-[0.2em] font-space uppercase"
           >
-            Rajana Chaitanya
+            Full Stack Developer & AI Engineer
           </motion.h2>
           
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-white via-neutral-200 to-neutral-500 leading-[1.1] py-4 px-2 font-space tracking-tighter">
-            <span className="block mb-2">
-              {"Full Stack Developer &".split(" ").map((word, i) => (
-                <motion.span
-                  key={`line1-${i}`}
-                  initial={{ opacity: 0, filter: 'blur(10px)', y: 20 }}
-                  animate={{ opacity: 1, filter: 'blur(0px)', y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.3 + i * 0.1, ease: "easeOut" }}
-                  className="inline-block mr-3 md:mr-4"
-                >
-                  {word}
-                </motion.span>
-              ))}
-            </span>
-            <span className="block">
-              {"AI Engineer".split(" ").map((word, i) => (
-                <motion.span
-                  key={`line2-${i}`}
-                  initial={{ opacity: 0, filter: 'blur(10px)', y: 20 }}
-                  animate={{ opacity: 1, filter: 'blur(0px)', y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.3 + (i + 4) * 0.1, ease: "easeOut" }}
-                  className="inline-block mr-3 md:mr-4"
-                >
-                  {word}
-                </motion.span>
-              ))}
-            </span>
-          </h1>
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+            className="text-6xl md:text-8xl lg:text-[10rem] font-bold bg-clip-text text-transparent bg-gradient-to-b from-white via-neutral-200 to-neutral-500 leading-[1] py-2 px-2 font-space tracking-tighter mb-6"
+          >
+            Rajana Chaitanya
+          </motion.h1>
           
           <motion.p 
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1 }}
-            className="mt-8 text-neutral-400 max-w-xl text-lg leading-relaxed font-archivo"
+            className="mt-8 text-neutral-400 max-w-3xl mx-auto text-xl md:text-2xl leading-relaxed font-archivo"
           >
             Architecting scalable full-stack systems and integrating advanced <span className="text-white">AI/LLM pipelines</span> to solve complex, real-world problems.
           </motion.p>
@@ -129,7 +109,7 @@ export function SplineSceneBasic() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 1.2 }}
-            className="mt-12 flex flex-wrap gap-5 items-center"
+            className="mt-14 flex flex-wrap justify-center gap-8 items-center"
           >
             <CVButton />
             <div className="flex gap-4 items-center">

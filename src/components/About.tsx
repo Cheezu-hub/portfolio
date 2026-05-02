@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
+import type { Variants } from "framer-motion";
 import { CVButton } from "@/components/ui/cv-button";
-import { Award, Code2, Rocket, Users } from "lucide-react";
 
-const containerVariants = {
+
+const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -13,17 +14,11 @@ const containerVariants = {
   }
 };
 
-const itemVariants = {
+const itemVariants: Variants = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
 };
 
-const stats = [
-  { label: "Experience", value: "3+ Years", icon: Code2 },
-  { label: "Projects", value: "20+", icon: Rocket },
-  { label: "Hackathons", value: "10+", icon: Award },
-  { label: "Clients", value: "5+", icon: Users },
-];
 
 export function About() {
   return (
@@ -42,7 +37,7 @@ export function About() {
           </motion.div>
           <motion.h2 
             variants={itemVariants}
-            className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white via-neutral-200 to-neutral-500 mb-8 font-space"
+            className="text-4xl md:text-5xl font-bold pb-2 bg-clip-text text-transparent bg-gradient-to-r from-white via-neutral-200 to-neutral-500 mb-8 font-space"
           >
             About Me
           </motion.h2>
@@ -61,19 +56,7 @@ export function About() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
-            {stats.map((stat, i) => (
-              <motion.div
-                key={stat.label}
-                variants={itemVariants}
-                className="p-4 rounded-2xl bg-neutral-900/30 border border-neutral-800/30 flex flex-col items-center justify-center text-center hover:border-neutral-700 transition-colors"
-              >
-                <stat.icon className="w-5 h-5 text-neutral-500 mb-2" />
-                <span className="text-2xl font-bold text-white font-space">{stat.value}</span>
-                <span className="text-xs text-neutral-500 uppercase tracking-wider">{stat.label}</span>
-              </motion.div>
-            ))}
-          </div>
+
 
           <motion.div 
             variants={itemVariants}

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import type { Variants } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { Brain, Code, Cpu, Layers } from "lucide-react";
 
@@ -33,7 +34,7 @@ const skillCategories = [
   }
 ];
 
-const itemVariants = {
+const itemVariants: Variants = {
   hidden: { opacity: 0, scale: 0.95 },
   visible: { 
     opacity: 1, 
@@ -42,7 +43,7 @@ const itemVariants = {
   }
 };
 
-function SkillCard({ category, index }: { category: typeof skillCategories[0], index: number }) {
+function SkillCard({ category }: { category: typeof skillCategories[0] }) {
   const Icon = category.icon;
   
   return (
@@ -106,14 +107,14 @@ export function Skills() {
           <div className="inline-block px-3 py-1 rounded-full bg-neutral-900 border border-neutral-800 text-xs font-medium text-neutral-400 mb-6 uppercase tracking-widest">
             Expertise
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-500 font-space tracking-tight">
+          <h2 className="text-4xl md:text-5xl font-bold pb-2 bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-500 font-space tracking-tight">
             Technical Arsenal
           </h2>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-6 auto-rows-[minmax(200px,auto)]">
           {skillCategories.map((category, index) => (
-            <SkillCard key={index} category={category} index={index} />
+            <SkillCard key={index} category={category} />
           ))}
         </div>
       </motion.div>

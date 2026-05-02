@@ -1,4 +1,5 @@
-import { Mail, Github, Linkedin, ArrowUp, Terminal, Heart } from "lucide-react";
+import { ArrowUp, Terminal, Heart } from "lucide-react";
+import { Github, Linkedin } from "@/components/ui/icons";
 import { Magnetic } from "@/components/ui/magnetic";
 
 export function Footer() {
@@ -19,7 +20,7 @@ export function Footer() {
               <div className="w-12 h-12 rounded-2xl bg-white text-black flex items-center justify-center font-bold text-xl shadow-[0_0_30px_rgba(255,255,255,0.1)]">
                 <Terminal className="w-6 h-6" />
               </div>
-              <span className="text-2xl font-bold text-white tracking-tighter font-space">CHAITANYA<span className="text-neutral-500">.AI</span></span>
+              <span className="text-2xl font-bold text-white tracking-tighter font-space">Rajana Chaitanya</span>
             </div>
             <p className="text-neutral-500 max-w-sm leading-relaxed font-archivo">
               Architecting the next generation of <span className="text-neutral-300">AI-driven systems</span> and scalable web infrastructure. Let's create something extraordinary together.

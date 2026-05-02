@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Mail, Send, MapPin, CheckCircle2, Linkedin, Github, Globe } from "lucide-react";
+import { Mail, Send, MapPin, CheckCircle2, Globe } from "lucide-react";
+import { Github, Linkedin } from "@/components/ui/icons";
 import { Magnetic } from "@/components/ui/magnetic";
 
 export const Contact = () => {
@@ -36,7 +37,7 @@ export const Contact = () => {
       } else {
         setStatus("error");
       }
-    } catch (error) {
+    } catch {
       setStatus("error");
     }
   };
@@ -61,7 +62,7 @@ export const Contact = () => {
         <div className="inline-block px-3 py-1 rounded-full bg-neutral-900 border border-neutral-800 text-xs font-medium text-neutral-400 mb-6 uppercase tracking-widest">
           Connect
         </div>
-        <h2 className="text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-500 font-space tracking-tight">
+        <h2 className="text-4xl md:text-6xl font-bold mb-6 pb-2 bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-500 font-space tracking-tight">
           Let's Build Something Great
         </h2>
         <p className="text-neutral-400 max-w-2xl mx-auto text-lg leading-relaxed font-archivo">

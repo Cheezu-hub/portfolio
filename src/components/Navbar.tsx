@@ -49,7 +49,7 @@ export const Navbar = () => {
           <div className="w-10 h-10 rounded-xl bg-white text-black flex items-center justify-center font-bold text-lg shadow-[0_0_20px_rgba(255,255,255,0.3)] group-hover:scale-110 transition-transform duration-300">
             <Terminal className="w-5 h-5" />
           </div>
-          <span className="text-xl font-bold text-white tracking-tighter hidden sm:block font-space">CHAITANYA<span className="text-neutral-500">.AI</span></span>
+          <span className="text-2xl md:text-3xl font-bold text-white tracking-tighter hidden sm:block font-space">Rajana Chaitanya</span>
         </motion.div>
 
         {/* Desktop Navbar */}

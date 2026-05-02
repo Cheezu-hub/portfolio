@@ -9,8 +9,8 @@ interface CVButtonProps {
 export const CVButton = ({ className }: CVButtonProps) => {
   return (
     <motion.a
-      href="/Chaitanya_Resume.pdf"
-      download="Chaitanya_Resume.pdf"
+      href="/Chaitanya-resume (2).pdf"
+      download="Chaitanya-resume (2).pdf"
       className={cn(
         "relative group inline-flex items-center gap-3 px-8 py-4 bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-full overflow-hidden transition-all duration-500 hover:border-white/30 hover:bg-white/[0.08]",
         className

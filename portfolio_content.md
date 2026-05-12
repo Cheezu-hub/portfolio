@@ -24,6 +24,15 @@ A results-driven Full Stack Developer and AI Engineer with a robust system desig
 * **Implementation**: Engineered a robust backend featuring regex-based redaction of sensitive data (cookies, authorization headers, bearer tokens) and integrated AST validation to guarantee syntactically correct Python code generation.
 * **Impact**: Built a real-time streaming log component for deep pipeline visibility and empowered AI assistants to autonomously interact with websites through the instantaneous output of ready-to-deploy MCP tool packages.
 
+### EduCost AI – Financial Decision-Support Platform
+*Technologies: Next.js 15, Node.js, Express, PostgreSQL, Prisma, Recharts, Framer Motion, OpenAI API, Docker*
+* **Problem**: STEM students often struggle to accurately estimate the true cost of education, long-term loan burdens, and financial risk before enrolling.
+* **Architecture**: Architected a modular full-stack system featuring a robust financial calculation engine and a context-aware AI advisor for personalized decision support.
+* **Implementation**: Engineered real-time ROI/EMI projectors, interactive 'what-if' scenario simulators, and a secure JWT-authenticated dashboard with high-fidelity data visualizations.
+* **Impact**: Empowers families to evaluate educational investments through transparent risk assessment (DTI ratios) and career stress modeling, promoting long-term financial sustainability.
+* **GitHub**: [github.com/Cheezu-hub/-EduCost-AI](https://github.com/Cheezu-hub/-EduCost-AI)
+
+
 ### SymbioTech – AI-Powered Industrial Symbiosis Platform
 *Technologies: React, FastAPI, PostgreSQL*
 * **Problem**: Critical inefficiencies in matching massive industrial waste byproducts to equivalent cross-industry resource demands.

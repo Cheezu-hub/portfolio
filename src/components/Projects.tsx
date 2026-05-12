@@ -18,6 +18,16 @@ const projects = [
     featured: true
   },
   {
+    title: "EduCost AI \u2013 Financial Decision-Support Platform",
+    tech: "Next.js 15, Node.js, Express, PostgreSQL, Prisma, Recharts, Framer Motion, OpenAI API, Docker",
+    problem: "...",
+    architecture: "...",
+    implementation: "...",
+    impact: "...",
+    github: "https://github.com/Cheezu-hub/-EduCost-AI",
+    featured: true
+  },
+  {
     title: "SymbioTech \u2013 AI-Powered Industrial Symbiosis Platform",
     tech: "React, FastAPI, PostgreSQL",
     problem: "Critical inefficiencies in matching massive industrial waste byproducts to equivalent cross-industry resource demands.",

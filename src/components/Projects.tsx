@@ -25,6 +25,7 @@ const projects = [
     implementation: "Engineered real-time ROI/EMI projectors, interactive 'what-if' scenario simulators, and a secure JWT-authenticated dashboard with high-fidelity data visualizations.",
     impact: "Empowers families to evaluate educational investments through transparent risk assessment (DTI ratios) and career stress modeling, promoting long-term financial sustainability.",
     github: "https://github.com/Cheezu-hub/-EduCost-AI",
+    badge: "💡 Intelligent Financial Guidance",
     featured: true
   },
   {

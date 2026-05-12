@@ -22,8 +22,8 @@ const projects = [
     tech: "Next.js 15, Node.js, Express, PostgreSQL, Prisma, Recharts, Framer Motion, OpenAI API, Docker",
     problem: "STEM students often struggle to accurately estimate the true cost of education, long-term loan burdens, and financial risk before enrolling.",
     architecture: "Architected a modular full-stack system featuring a robust financial calculation engine and a context-aware AI advisor for personalized decision support.",
-    implementation: "...",
-    impact: "...",
+    implementation: "Engineered real-time ROI/EMI projectors, interactive 'what-if' scenario simulators, and a secure JWT-authenticated dashboard with high-fidelity data visualizations.",
+    impact: "Empowers families to evaluate educational investments through transparent risk assessment (DTI ratios) and career stress modeling, promoting long-term financial sustainability.",
     github: "https://github.com/Cheezu-hub/-EduCost-AI",
     featured: true
   },

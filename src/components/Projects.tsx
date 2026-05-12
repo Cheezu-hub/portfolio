@@ -20,8 +20,8 @@ const projects = [
   {
     title: "EduCost AI \u2013 Financial Decision-Support Platform",
     tech: "Next.js 15, Node.js, Express, PostgreSQL, Prisma, Recharts, Framer Motion, OpenAI API, Docker",
-    problem: "...",
-    architecture: "...",
+    problem: "STEM students often struggle to accurately estimate the true cost of education, long-term loan burdens, and financial risk before enrolling.",
+    architecture: "Architected a modular full-stack system featuring a robust financial calculation engine and a context-aware AI advisor for personalized decision support.",
     implementation: "...",
     impact: "...",
     github: "https://github.com/Cheezu-hub/-EduCost-AI",

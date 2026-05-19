@@ -15,6 +15,22 @@ A results-driven Full Stack Developer and AI Engineer with a robust system desig
 
 ---
 
+## Work Experience
+
+### Tech Mahindra
+*Technology Intern | May 2026 – Present*
+* **Tech Stack**: Selenium WebDriver, Python, Veeva CRM, Test Automation, QA Workflows
+* **Description**: Working on enterprise automation testing workflows using Selenium WebDriver and Python within the Veeva CRM ecosystem. Gaining hands-on exposure to browser automation, QA processes, debugging, dynamic element handling, waits, frames, workflow validations, and real-world enterprise testing practices in the healthcare and life sciences domain.
+* **Responsibilities**:
+  * Automating browser interactions and workflow validations using Selenium WebDriver and Python.
+  * Working with dynamic web elements, XPath locators, waits, frames, and iFrames in enterprise applications.
+  * Learning software testing lifecycle concepts including debugging, test execution, validation, and automation reliability.
+  * Exploring healthcare and life sciences CRM workflows through practical exposure to the Veeva CRM platform.
+  * Improving automation understanding through hands-on work with enterprise QA practices and browser testing workflows.
+* **Currently Exploring**: Advanced Selenium Automation, Playwright Automation, API Testing, Automation Framework Design, Enterprise QA Workflows.
+
+---
+
 ## Projects
 
 ### MCP Forge – AI Web Automation Tool Generator

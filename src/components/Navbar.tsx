@@ -5,7 +5,8 @@ import { Home, User, Briefcase, Code, Award, Mail, Menu, X, Terminal } from "luc
 const navItems = [
   { name: "Home", icon: Home, href: "#home" },
   { name: "About", icon: User, href: "#about" },
-  { name: "Projects", icon: Briefcase, href: "#projects" },
+  { name: "Experience", icon: Briefcase, href: "#experience" },
+  { name: "Projects", icon: Code, href: "#projects" },
   { name: "Skills", icon: Code, href: "#skills" },
   { name: "Achievements", icon: Award, href: "#achievements" },
   { name: "Contact", icon: Mail, href: "#contact" },

@@ -2,6 +2,7 @@ import { ReactLenis } from 'lenis/react'
 import { motion, useScroll, useSpring } from "framer-motion"
 import { SplineSceneBasic } from "@/components/ui/spline-demo"
 import { About } from "@/components/About"
+import { WorkExperience } from "@/components/WorkExperience"
 import { Projects } from "@/components/Projects"
 import { Skills } from "@/components/Skills"
 import { Achievements } from "@/components/Achievements"
@@ -65,6 +66,10 @@ function App() {
           <div className="w-full space-y-32">
             <section id="about" className="scroll-mt-32">
               <About />
+            </section>
+
+            <section id="experience" className="scroll-mt-32">
+              <WorkExperience />
             </section>
             
             <section id="projects" className="scroll-mt-32">
